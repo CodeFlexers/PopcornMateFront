@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    min-height: 100vh;
+}
+.title {
+    font-size: 20px;
+}
+.signupCheckerContainer div input {
+    margin: 4px;
+    min-width: 16px;
+    height: 16px;
+}
+.signupCheckerContainer div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.signupCheckerContainer div span {
+    font-size: 14px;
+}
+.legalButton {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.submit {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* 모바일 (작은 화면) */
+@media (max-width: 767px) {
+    .wrapper {
+        width: 90%;
+    }
+}
+
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .wrapper {
+        width: 70%;
+    }
+}
+
+/* 데스크탑 */
+@media (min-width: 1024px) {
+    .wrapper {
+        width: 400px;
+    }
+}

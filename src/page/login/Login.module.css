@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.loginTitle {
+    justify-self: flex-start;
+    padding: 10px;
+    padding-bottom: 40px;
+    font-size: 1.2em;
+}
+.idWrapper,
+.pwWrapper {
+    position: relative;
+}
+.idWrapper img,
+.pwWrapper img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    transition: all 0.5s;
+}
+.inputContainer input {
+    width: 95%;
+}
+.inputContainer input:focus~img {
+    transform: translateX(180%);
+    scale: 1.5;
+    filter:
+        brightness(2.3) contrast(1.2) drop-shadow(0 0 5px #7965C1) drop-shadow(0 0 10px #7965C1) drop-shadow(0 0 20px #7965C1);
+}
+.login {
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.join {
+    cursor: pointer;
+    border-top: solid 1px #505050;
+    padding-top: 20px;
+    font-size: 14px;
+    letter-spacing: -.5px;
+    opacity: .6;
+}
+
+/* 모바일 (작은 화면) */
+@media (max-width: 767px) {
+    .loginContainer {
+        width: 60%;
+    }
+}
+
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .loginContainer {
+        width: 70%;
+    }
+}
+
+/* 데스크탑 */
+@media (min-width: 1024px) {
+    .loginContainer {
+        width: 400px;
+    }
+}
