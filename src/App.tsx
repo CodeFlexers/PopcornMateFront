@@ -5,6 +5,7 @@ import NotFound from './page/notfound/NofFound';
 import Login from './page/login/Login';
 import Join from './page/join/Join';
 import Legal from './component/legal/Legal';
+import Movie from './page/movie/Movie';
 
 function AnimateRoutes(){
     const location = useLocation();
@@ -14,6 +15,7 @@ function AnimateRoutes(){
           <Route path='/login' element={<Login/>}/>
           <Route path='/join' element={<Join/>}/>
           <Route path='/' element={<Home/>}/>
+          <Route path='/movie/:id' element={<Movie/>}/>
           <Route path='/legal' element={<Legal/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>

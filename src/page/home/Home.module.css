@@ -1,0 +1,30 @@
+
+.loginSection h2{
+    text-align: start;
+    padding-left: 20px;
+}
+.loginContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+.loginContent div{
+    background-color: red;
+    width: 40%;
+    background: linear-gradient(
+    135deg,
+    #3e3974 0%,
+    #4B3B65 40%,
+    #7965C1 80%,
+    #C9B6F5 100%
+  );
+    border-radius: 10px;
+    height: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

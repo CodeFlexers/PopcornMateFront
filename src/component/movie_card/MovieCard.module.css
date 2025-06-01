@@ -1,0 +1,18 @@
+.movieCard{
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+.newBadge{
+    position: absolute;
+    left: 5%;
+    background-color: #7965C1;
+    padding: 5px 10px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+    font-size: 14px;
+}
+.poster{
+    border-radius: 4px;
+}

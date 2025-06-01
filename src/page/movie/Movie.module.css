@@ -1,0 +1,51 @@
+.movieThumbnail{
+      position: relative;
+  display: inline-block;   /* 또는 block, width 지정 */
+  width: 100vw;            /* 예시 */
+  overflow: hidden;
+}
+.backdropPath{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.gradient{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 60%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(36,36,36,0.7) 60%,
+    #242424 100%
+  );
+  pointer-events: none;
+  display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.gradient h1{
+    padding-left: 20px;
+}
+.movieInfo{
+    margin-left: 20px;
+    display: flex;
+    gap: 10px;
+}
+.reactionButtons{
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+.reactionButtons button{
+    padding: 10px;
+    border-radius: 5px;
+}
+.watchedFeedback{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}

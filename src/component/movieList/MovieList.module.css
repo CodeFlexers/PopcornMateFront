@@ -1,0 +1,33 @@
+.movieList{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+.movieList::-webkit-scrollbar {
+    display: none;
+}
+.recommendMovie{
+    position: relative;
+    background-color: rgb(28, 28, 28);
+    margin-top: 20px;
+}
+.nextButton{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: 100%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.title{
+    text-align: start;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+}

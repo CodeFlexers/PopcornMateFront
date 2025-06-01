@@ -12,6 +12,7 @@
 .title {
     font-size: 20px;
 }
+/* 걍 css랑 똑같은데 클래스 이름 안겹쳐요 보여드림림 */
 .signupCheckerContainer div input {
     margin: 4px;
     min-width: 16px;

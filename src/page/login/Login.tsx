@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Logo from '../../component/logo/Logo';
+import Logo from '../../component/logo/Header';
 import s from './Login.module.css';
 import { motion } from 'framer-motion';
 import useScreenWidth from '../../hooks/useScreenWidth';
@@ -11,11 +11,11 @@ const Login = () => {
         <>
             <Logo />
             <motion.div
-                initial={{ x: screenWidth, scale: 1 }}
+                initial={{ x: screenWidth, scale: 0 }}
                 animate={{ opacity: 1, x: 0 , scale: 1}}
                 exit={{ x: screenWidth, scale: 0}}
                 transition={{
-                    duration: 0.3,
+                    duration: 0.65,
                     ease: 'easeOut'
                 }}
             >   <div className={s.container}>
