@@ -6,6 +6,8 @@ import Login from './page/login/Login';
 import Join from './page/join/Join';
 import Legal from './component/legal/Legal';
 import Movie from './page/movie/Movie';
+import ReviewDetail from './page/reviewDetail/ReviewDetail';
+import ReviewWrite from './page/reviewWrite/ReviewWrite';
 
 function AnimateRoutes(){
     const location = useLocation();
@@ -16,6 +18,8 @@ function AnimateRoutes(){
           <Route path='/join' element={<Join/>}/>
           <Route path='/' element={<Home/>}/>
           <Route path='/movie/:id' element={<Movie/>}/>
+          <Route path='/review/detail/:id' element={<ReviewDetail/>}/>
+          <Route path='/review/write/:id' element={<ReviewWrite/>}/>
           <Route path='/legal' element={<Legal/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>

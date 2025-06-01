@@ -1,0 +1,54 @@
+.commentCard {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.profileImage {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+  border: 2px solid #7965C1;
+}
+
+.commentContent {
+  flex: 1;
+}
+
+.commentHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.username {
+  font-weight: 600;
+  color: #eee;
+  font-size: 0.95rem;
+}
+
+.edited {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #888;
+  margin-left: auto;
+}
+
+.text {
+  font-size: 0.95rem;
+  color: #ddd;
+  line-height: 1.5;
+  white-space: pre-line;
+}

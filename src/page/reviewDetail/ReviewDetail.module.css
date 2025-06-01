@@ -1,0 +1,134 @@
+.reviewCard {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profileImage {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+  border: 2px solid #7965C1;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.userLine {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.edited {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.reviewDate {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.reviewRate {
+  color: #ffc107;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.reviewText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin-top: 0.75rem;
+  white-space: pre-line;
+}
+
+.reviewFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.footerItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footerItem:hover {
+  color: #ffffff;
+}
+.commentForm {
+  display: flex;
+  gap: 0.75rem;
+  background-color: #2a2a2a;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+}
+
+.textarea {
+  width: 90%;
+  min-height: 80px;
+  resize: vertical;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #f0f0f0;
+  background-color: #1f1f1f;
+  border: 1px solid #444;
+  border-radius: 8px;
+  outline: none;
+  line-height: 1.5;
+  transition: border-color 0.2s ease;
+}
+
+.textarea:focus {
+  border-color: #7965C1;
+}
+
+.submitButton {
+    min-height: 50px;
+    width: 10%;
+  background-color: #7965C1;
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #6b56b5;
+  box-shadow: 0 0 8px rgba(121, 101, 193, 0.5);
+}

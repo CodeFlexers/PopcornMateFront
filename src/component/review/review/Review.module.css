@@ -1,0 +1,96 @@
+.reviewCard {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.reviewHeader {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profileImage {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.75rem;
+  border: 2px solid #7965C1;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.userLine {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.edited {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.reviewDate {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.reviewRate {
+  color: #ffc107;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.reviewText {
+    cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin-top: 0.75rem;
+  white-space: pre-line;
+}
+
+.reviewFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.footerItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footerItem:hover {
+  color: #ffffff;
+}

@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import Review from '../../component/review/Review';
 import s from './Movie.module.css';
 import Footer from '../../component/footer/Footer';
+import ReviewContainer from '../../component/review/ReviewContainer';
+import Header from '../../component/logo/Header';
+import { motion } from 'framer-motion';
 
 const Movie = () => {
     const movie = {
@@ -17,6 +19,13 @@ const Movie = () => {
     }
     const [isWatched, setIsWatched] = useState(false);
     return (
+        <>
+        <Header/>
+        <motion.div
+        initial={{ x: 0, opacity: 1, scale: 0 }}
+        animate={{ x: 0, opacity: 1, scale: 1 }}
+        exit={{ x: 0, opacity: 1, scale: 0 }}
+        >
         <div>
             <div className={s.movieThumbnail}>
                 <img className={s.backdropPath} src={"https://image.tmdb.org/t/p/w780" + movie.backdropPath} alt={movie.title} />
@@ -43,9 +52,9 @@ const Movie = () => {
                         <div className={s.watchedFeedback}>
                             <h3>영화가 어땟는지 알려주세요.</h3>
                             <div style={{ display: 'flex', gap: '10px' }}>
-                            <button>맘에들어요! 👍 </button>
-                            <button>별로에요 👎 </button>
-                            <button onClick={() => setIsWatched(false)}>안알려줄래요..😢</button>
+                                <button>맘에들어요! 👍 </button>
+                                <button>별로에요 👎 </button>
+                                <button onClick={() => setIsWatched(false)}>안알려줄래요..😢</button>
                             </div>
                         </div>
                     }
@@ -55,11 +64,11 @@ const Movie = () => {
                     <p>{movie.overview}</p>
                 </div>
             </div>
-            <section>
-                <Review/>
-            </section>
-            <Footer/>
+                <ReviewContainer/>
+            <Footer />
         </div>
+        </motion.div>
+        </>
     );
 }
 

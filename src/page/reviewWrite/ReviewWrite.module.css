@@ -1,0 +1,82 @@
+.page {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #2a2a2a;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.rateSection {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.starFilled {
+  color: #ffc107;
+  transition: transform 0.2s ease;
+}
+
+.starEmpty {
+  color: #555;
+  transition: transform 0.2s ease;
+}
+
+.starFilled:hover,
+.starEmpty:hover {
+  transform: scale(1.2);
+}
+
+.textarea {
+    box-sizing: border-box;
+  width: 100%;
+  min-height: 120px;
+  resize: none;
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: #f0f0f0;
+  background-color: #1f1f1f;
+  border: 1px solid #444;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  outline: none;
+}
+
+.textarea:focus {
+  border-color: #7965C1;
+}
+
+.submitButton {
+  width: 100%;
+  background-color: #7965C1;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #6b56b5;
+  box-shadow: 0 0 8px rgba(121, 101, 193, 0.5);
+}
+
+.submitButton:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
