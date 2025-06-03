@@ -11,8 +11,16 @@
 }
 .reviewWriteContainer{
   align-self: flex-start;
+  margin-bottom: 30px;
 }
 .reviewWriteContainer button{
+    padding: 10px;
+    border-radius: 7px;
+}
+.noReviews{
+    text-align: center;
+    font-size: 1.2em;
+    color: #7965C1;
     padding: 10px;
     border-radius: 7px;
 }

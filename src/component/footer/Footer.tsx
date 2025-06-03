@@ -1,13 +1,14 @@
+import s from './Footer.module.css';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-white py-4">
-        <div className="container mx-auto text-center">
-            <p className="text-sm">
+        <footer>
+        <div className={s.container}>
+            <p className="">
             &copy; {new Date().getFullYear()} Code Flexers. All rights reserved.
             </p>
-            <p className="text-xs mt-2">
-            Built with ❤️ using React and CSS
+            <p style={{color:'gray'}}>
+                문의사항 : wjdwltjq7289@gmail.com
             </p>
             <p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none" fillRule="evenodd"><path d="M0 0h48v48H0z"></path><path fill="currentColor" fillRule="nonzero" d="M32.5 12.44h-4.18c-.82 0-2.66.16-2.66 3.34v4.08h6.84l-1.14 6.31h-5.7V42.5H19.2V26.17h-5.7v-6.3h5.7v-5.58s-.22-7.79 7.98-7.79h5.32z"></path></g></svg>

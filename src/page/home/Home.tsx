@@ -8,12 +8,14 @@ import api from '../../common/axios';
 
 const Home = () => {
     const [isLogin, setIsLogin] = useState(localStorage.getItem('popcornToken') ? true : false);
+    const [recommendMovie, setRecommendMovie] = useState([]);
     const [popMovie, setPopMovie] = useState([]);
     const [newMovie, setNewMovie] = useState([]);
+    const [firstLogin, setFirstLogin] = useState(false);
     const getPopMovie = async () => {
         const res = await api.get('/movies/pop');
         if (res.status === 200) {
-            console.log(res.data);
+            // console.log(res);
 
             setPopMovie(res.data);
         } else {
@@ -23,15 +25,25 @@ const Home = () => {
     const getNewMovie = async () => {
         const res = await api.get('/movies/new');
         if (res.status === 200) {
-            console.log(res.data);
+            // console.log(res);
             setNewMovie(res.data);
         } else {
             console.error('Failed to fetch new movies');
         }
     }
+    const getRecommendMovie = async () => {
+        const res = await api.get(`/recommendation/activities`);
+        // console.log('zz', res);
+        if(res.data===""){
+            setFirstLogin(true);
+        } else {
+            setRecommendMovie(res.data);        
+        }
+    }
     useEffect(() => {
         getPopMovie();
         getNewMovie();
+        getRecommendMovie();
     }, []);
     return (
         <>
@@ -45,8 +57,9 @@ const Home = () => {
                     ease: 'easeOut'
                 }}>
                 <div>
-                    <MovieList title="추천하는 영화" movies={popMovie} />
-
+                    {   !firstLogin&&
+                        <MovieList title="추천하는 영화" movies={recommendMovie} />
+                    }
                     {
                         !isLogin &&
                         <section className={s.loginSection}>

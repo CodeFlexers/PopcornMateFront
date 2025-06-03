@@ -54,6 +54,7 @@ const ReviewContainer = () => {
     
   useEffect(()=>{
     if(inView){
+      
       fetchReviews();
     }
   },[inView]);
@@ -63,7 +64,7 @@ const ReviewContainer = () => {
       <div className={s.reviewWriteContainer}>
         {
           isLogin && <><button onClick={() => nav(`/review/write/${id}`)}>리뷰 작성하기</button>
-        <p>영화를 본 후 리뷰를 남겨주세요!</p></>
+        </>
         }
         
       </div>

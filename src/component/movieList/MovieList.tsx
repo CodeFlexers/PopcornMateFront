@@ -4,12 +4,12 @@ import { useRef } from "react";
 import s from './MovieList.module.css';
 type MovieListProps = {
     title: string;
-    movies: { movieCode:number, poster: string;}[];
+    movies: { movieCode:number, poster: string, new:boolean, adult:boolean;}[];
 }
 const MovieList = ({title, movies}: MovieListProps) => {
     const nav = useNavigate();
     const recommendMovieRef = useRef(null);
-
+    
     const scrollRight = () => {
         if (recommendMovieRef.current) {
             const container = recommendMovieRef.current as HTMLDivElement;
@@ -25,7 +25,7 @@ const MovieList = ({title, movies}: MovieListProps) => {
             <div className={s.movieList} ref={recommendMovieRef}>
                 {
                     movies.map((movie) => (
-                        <MovieCard key={movie.movieCode} nav={nav} posterPath={movie.poster} isNew={false} movieCode={movie.movieCode} />
+                        <MovieCard key={movie.movieCode} isAdult={movie.adult} nav={nav} posterPath={movie.poster} isNew={movie.new} movieCode={movie.movieCode} />
                     ))
                 }
             </div>
