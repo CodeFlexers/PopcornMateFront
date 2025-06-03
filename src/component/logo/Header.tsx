@@ -1,9 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import s from './Header.module.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
+type User = {
+    accountCode: number;
+    accountId: string;
+    nickname: string;
+    accountRole: string;
+}
+
 const Header = () => {
     const nav = useNavigate();
     const [token, setToken] = useState<string | null>(localStorage.getItem('popcornToken'));
+    const [user, setUser] = useState<User | null>();
+    useEffect(()=>{
+        if(token){            
+            setUser(jwtDecode(token) as User);
+        }
+    },[token])
     return (
         <>
             <header className={s.header}>
@@ -11,9 +25,8 @@ const Header = () => {
                 <div className={s.menuWrapper}>
                     <div className={s.menu}>
                         {
-                            token ? 
-                            <>
-                                <button onClick={() => nav('/mypage')}>마이페이지</button>
+                            token ? <>
+                                <button onClick={() => nav(`/user/${user?.accountCode}`)}>마이페이지</button>
                                 <button onClick={() => {
                                     localStorage.removeItem('popcornToken');
                                     setToken(null);

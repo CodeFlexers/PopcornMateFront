@@ -10,13 +10,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 const ReviewContainer = () => {
   const nav = useNavigate();
   const {id} = useParams();
+  const [isLogin, setIsLogin] = useState(localStorage.getItem('popcornToken') ? true : false);
   const {ref, inView} = useInView({threshold: 0.5});
   const [reviews, setReviews] = useState<ReviewDto[]>([]);
   const [pageObject, setPageObject] = useState({page:0, first:false, last:false, totalElements:0, totalPages:0});
   const fetchReviews = async () => {
     try{
       if(pageObject.last) return;
-      const res = await api.get(`/reviews?movieCode=950387&sort=new_desc&page=${pageObject.page}`);
+      const res = await api.get(`/reviews?movieCode=${id}&sort=new_desc&page=${pageObject.page}`);
       console.log(res);
       setReviews(prevReviews => [...prevReviews, ...res.data.content]);
       setPageObject(p => ({...p, page: p.page + 1, first: res.data.first, last: res.data.last, totalElements: res.data.totalElements, totalPages: res.data.totalPages}));
@@ -60,8 +61,11 @@ const ReviewContainer = () => {
     <div className={s.reviewContainer}>
       <h1>영화 리뷰</h1>
       <div className={s.reviewWriteContainer}>
-        <button onClick={() => nav(`/review/write/${id}`)}>리뷰 작성하기</button>
-        <p>영화를 본 후 리뷰를 남겨주세요!</p>
+        {
+          isLogin && <><button onClick={() => nav(`/review/write/${id}`)}>리뷰 작성하기</button>
+        <p>영화를 본 후 리뷰를 남겨주세요!</p></>
+        }
+        
       </div>
       <div className={s.reviewList}>
         {

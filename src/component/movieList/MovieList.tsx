@@ -4,8 +4,9 @@ import { useRef } from "react";
 import s from './MovieList.module.css';
 type MovieListProps = {
     title: string;
+    movies: { movieCode:number, poster: string;}[];
 }
-const MovieList = ({title}: MovieListProps) => {
+const MovieList = ({title, movies}: MovieListProps) => {
     const nav = useNavigate();
     const recommendMovieRef = useRef(null);
 
@@ -22,14 +23,11 @@ const MovieList = ({title}: MovieListProps) => {
         <div className={s.recommendMovie}>
             <div className={s.title}>{title}</div>
             <div className={s.movieList} ref={recommendMovieRef}>
-                <MovieCard nav={nav} posterPath='/dDlfjR7gllmr8HTeN6rfrYhTdwX.jpg' isNew={true} />
-                <MovieCard nav={nav} posterPath='/oLxWocqheC8XbXbxqJ3x422j9PW.jpg' isNew={false} />
-                <MovieCard nav={nav} posterPath='/oLxWocqheC8XbXbxqJ3x422j9PW.jpg' isNew={false} />
-                <MovieCard nav={nav} posterPath='/oLxWocqheC8XbXbxqJ3x422j9PW.jpg' isNew={false} />
-                <MovieCard nav={nav} posterPath='/oLxWocqheC8XbXbxqJ3x422j9PW.jpg' isNew={false} />
-                <MovieCard nav={nav} posterPath='/oLxWocqheC8XbXbxqJ3x422j9PW.jpg' isNew={false} />
-                <MovieCard nav={nav} posterPath='/oLxWocqheC8XbXbxqJ3x422j9PW.jpg' isNew={false} />
-                <MovieCard nav={nav} posterPath='/oLxWocqheC8XbXbxqJ3x422j9PW.jpg' isNew={false} />
+                {
+                    movies.map((movie) => (
+                        <MovieCard key={movie.movieCode} nav={nav} posterPath={movie.poster} isNew={false} movieCode={movie.movieCode} />
+                    ))
+                }
             </div>
             <button onClick={scrollRight} className={s.nextButton}>{">"}</button>
         </div>

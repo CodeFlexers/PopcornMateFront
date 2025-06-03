@@ -4,6 +4,7 @@ import Logo from "../../component/logo/Header";
 import useScreenWidth from "../../hooks/useScreenWidth";
 import s from './Join.module.css';
 import { useCallback, useState } from "react";
+import api from "../../common/axios";
 type FieldKey = '아이디' | '이메일' | '닉네임' | '비밀번호';
 
 type FieldValue = {
@@ -71,9 +72,22 @@ const Join = () => {
         }
         setVal(p => ({ ...p, [key]: { ...p[key], value: noKorean, validation: isValid } }));
     }, []);
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         const isAllValid = Object.values(val).every(field => field.validation);
         isAllValid ? nav('') : setMsg('빨간 박스를 모두 없애주세요!');
+        const f = new FormData();
+        f.append('id', val['아이디'].value);
+        f.append('email', val['이메일'].value);
+        f.append('nickname', val['닉네임'].value);
+        f.append('password', val['비밀번호'].value);
+        if (isAllValid) {
+            const res = await api.post('/join',f);
+            if (res.status === 200) {
+                nav('/login');
+            } else {
+                setMsg('가입 실패! 다시 시도해주세요.');
+            }
+        }
     }
     return (
         <>
